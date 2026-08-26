@@ -1,0 +1,89 @@
+name: Apply Computer Vision course update
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/apply-course-update.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Publish syllabus and update portfolio
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          import gzip
+
+          payload_path = Path('.site-update/computer-vision-course.html.gz.b64')
+          syllabus_path = Path('computer-vision-course.html')
+          index_path = Path('index.html')
+
+          payload = payload_path.read_text(encoding='utf-8').strip()
+          syllabus = gzip.decompress(base64.b64decode(payload))
+          syllabus_path.write_bytes(syllabus)
+
+          html = index_path.read_text(encoding='utf-8')
+
+          old_grant = '<article class="card grant-card"><h3>AFRL VFRP Extension Award</h3><p>Air Force Research Laboratory</p><p class="amount">$14,200</p></article>'
+          new_grant = '<article class="card grant-card"><h3>AFRL VFRP Extension Award</h3><p>Air Force Research Laboratory</p><p class="amount">$25,000 total</p></article>'
+          if old_grant not in html and new_grant not in html:
+              raise RuntimeError('Could not locate the VFRP Extension grant card.')
+          html = html.replace(old_grant, new_grant, 1)
+
+          html = html.replace(
+              '<div class="mini-stat"><strong>5</strong><span>Courses</span></div>',
+              '<div class="mini-stat"><strong>6</strong><span>Courses</span></div>',
+              1,
+          )
+
+          html = html.replace(
+              'Courses in machine learning, operating systems, and advanced algorithms, combining foundations with practical and research-oriented work.',
+              'Courses in computer vision, machine learning, operating systems, and advanced algorithms, combining foundations with practical and research-oriented work.',
+              1,
+          )
+
+          first_course = '          <article class="card course-card"><div class="course-code">CCIS 434</div><h3>Machine Learning</h3><p>Introduces supervised, unsupervised, and reinforcement learning. Students use Python, scikit-learn, and Google Colab to analyze data and develop predictive models.</p></article>'
+          computer_vision_course = '''          <article class="card course-card">
+            <div class="course-code">CPS/CS XXXX</div>
+            <h3>Computer Vision: From OpenCV to Vision-Language and World Models</h3>
+            <p>Hybrid, laboratory-centered course covering OpenCV, CNNs, YOLO, ResNet, vision transformers, vision-language models, and predictive world models. Each assignment includes a GitHub repository and narrated demo video workflow.</p>
+            <div class="actions"><a class="btn btn-primary" href="computer-vision-course.html">View course syllabus</a></div>
+          </article>'''
+          if 'href="computer-vision-course.html"' not in html:
+              if first_course not in html:
+                  raise RuntimeError('Could not locate the Teaching course grid.')
+              html = html.replace(first_course, computer_vision_course + '\n' + first_course, 1)
+
+          html = html.replace(
+              'This GitHub Pages profile uses information published on <a href="https://www.kishordgupta.com/" target="_blank" rel="noopener">kishordgupta.com</a>.',
+              'This GitHub Pages profile uses information published on <a href="https://www.kishordgupta.com/" target="_blank" rel="noopener">kishordgupta.com</a> and the instructor-provided Computer Vision course syllabus.',
+              1,
+          )
+
+          index_path.write_text(html, encoding='utf-8')
+
+          if not syllabus_path.read_text(encoding='utf-8').lstrip().lower().startswith('<!doctype html>'):
+              raise RuntimeError('The decoded syllabus is not valid HTML.')
+          if '$25,000 total' not in html or 'computer-vision-course.html' not in html:
+              raise RuntimeError('Requested portfolio changes were not applied.')
+          PY
+
+          rm -rf .site-update
+          rm -f .github/workflows/apply-course-update.yml
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Add Computer Vision course and update VFRP grant total"
+          git push
