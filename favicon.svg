@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="KDG monogram">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b12a4a"/>
+      <stop offset="1" stop-color="#701329"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="url(#g)"/>
+  <path d="M15 17h7v12l10-12h9L29.5 30.2 42 47h-8.8L24.8 35.3 22 38.4V47h-7V17Z" fill="#fff"/>
+  <path d="M43.5 38.5h6v8.5h-6z" fill="#e4bb63"/>
+</svg>
