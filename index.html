@@ -1,145 +1,1421 @@
-<html>
-<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
-<style type="text/css">
-<!--
-span.cls_002{font-family:Arial,serif;font-size:20.7px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
-div.cls_002{font-family:Arial,serif;font-size:20.7px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
-span.cls_003{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
-div.cls_003{font-family:Arial,serif;font-size:11.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
--->
-</style>
-<script type="text/javascript" src="184b4138-0ec8-11eb-8b25-0cc47a792c0a_id_184b4138-0ec8-11eb-8b25-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Kishor Datta Gupta | Trustworthy AI, Cybersecurity, and Autonomous Systems</title>
+  <meta name="description" content="Academic portfolio of Dr. Kishor Datta Gupta, Assistant Professor in Cyber-Physical Systems at Clark Atlanta University. Research in trustworthy AI, cybersecurity, physics-guided learning, multimodal systems, autonomous systems, and LLM evaluation.">
+  <meta name="author" content="Kishor Datta Gupta">
+  <meta name="theme-color" content="#10131a">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://kishordgupta.github.io/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dr. Kishor Datta Gupta">
+  <meta property="og:description" content="Trustworthy AI, cybersecurity, cyber-physical systems, and autonomous intelligence.">
+  <meta property="og:url" content="https://kishordgupta.github.io/">
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/2458509?v=4">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dr. Kishor Datta Gupta">
+  <meta name="twitter:description" content="Trustworthy AI, cybersecurity, cyber-physical systems, and autonomous intelligence.">
+  <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/2458509?v=4">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kishor Datta Gupta",
+    "honorificPrefix": "Dr.",
+    "honorificSuffix": "Ph.D.",
+    "jobTitle": "Assistant Professor",
+    "worksFor": {
+      "@type": "CollegeOrUniversity",
+      "name": "Clark Atlanta University",
+      "url": "https://www.cau.edu/"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Memphis"
+    },
+    "url": "https://kishordgupta.github.io/",
+    "image": "https://avatars.githubusercontent.com/u/2458509?v=4",
+    "sameAs": [
+      "https://www.kishordgupta.com/",
+      "https://github.com/kishordgupta",
+      "https://scholar.google.com/citations?hl=en&user=yFREujoAAAAJ",
+      "https://orcid.org/0000-0001-6867-2653",
+      "https://www.linkedin.com/in/kishordattagupta/"
+    ],
+    "knowsAbout": [
+      "Trustworthy Artificial Intelligence",
+      "Cybersecurity",
+      "Cyber-Physical Systems",
+      "Adversarial Machine Learning",
+      "Physics-Guided Neural Networks",
+      "Knowledge Graphs",
+      "Multimodal Data Fusion",
+      "Autonomous Systems",
+      "Large Language Model Evaluation",
+      "Industrial Control System Security"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f5f5f2;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-solid: #ffffff;
+      --surface-2: #ecece7;
+      --text: #151820;
+      --muted: #5b6270;
+      --line: rgba(21, 24, 32, 0.12);
+      --accent: #971f3d;
+      --accent-strong: #73142d;
+      --accent-soft: #f7e8ec;
+      --gold: #aa7b24;
+      --shadow: 0 24px 70px rgba(23, 25, 32, 0.12);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+      --max-width: 1180px;
+      --header-height: 76px;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #0c0f15;
+      --surface: rgba(19, 23, 32, 0.82);
+      --surface-solid: #141923;
+      --surface-2: #1b202b;
+      --text: #f3f4f7;
+      --muted: #a9b0bd;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #ff718e;
+      --accent-strong: #ff9bae;
+      --accent-soft: #351823;
+      --gold: #e2b65d;
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 24px);
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background:
+        radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 28rem),
+        radial-gradient(circle at 8% 32%, color-mix(in srgb, var(--gold) 9%, transparent), transparent 25rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 72%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid color-mix(in srgb, var(--accent) 70%, white);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: 12px;
+      z-index: 1000;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      min-height: var(--header-height);
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      backdrop-filter: blur(18px) saturate(135%);
+    }
+
+    .header-inner {
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      color: #ffffff;
+      background: linear-gradient(145deg, var(--accent), var(--accent-strong));
+      box-shadow: 0 10px 25px color-mix(in srgb, var(--accent) 30%, transparent);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-size: 0.98rem;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-text span {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 650;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font: inherit;
+      font-size: 1.05rem;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+    }
+
+    .theme-toggle:hover {
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    }
+
+    .hero {
+      padding: clamp(70px, 10vw, 132px) 0 clamp(64px, 9vw, 108px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: clamp(44px, 8vw, 96px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 20px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 22px;
+      font-size: clamp(3.2rem, 7.4vw, 6.7rem);
+      line-height: 0.92;
+      letter-spacing: -0.068em;
+      text-wrap: balance;
+    }
+
+    h1 .surname {
+      color: var(--accent);
+    }
+
+    .hero-role {
+      max-width: 760px;
+      margin-bottom: 22px;
+      color: var(--text);
+      font-size: clamp(1.18rem, 2.2vw, 1.55rem);
+      line-height: 1.42;
+      font-weight: 690;
+      letter-spacing: -0.025em;
+    }
+
+    .hero-lead {
+      max-width: 720px;
+      margin-bottom: 32px;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.6vw, 1.14rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 28px color-mix(in srgb, var(--accent) 24%, transparent);
+      transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: var(--accent-strong);
+      color: #ffffff;
+    }
+
+    .button.secondary {
+      border-color: var(--line);
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    .button.secondary:hover {
+      border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+      background: var(--surface-solid);
+      color: var(--accent);
+    }
+
+    .profile-card {
+      position: relative;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+    }
+
+    .profile-card::after {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -70px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 18%, transparent);
+      filter: blur(8px);
+      pointer-events: none;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      aspect-ratio: 1 / 1.04;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--surface-2);
+    }
+
+    .portrait-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .status-badge {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(12, 15, 21, 0.78);
+      color: #ffffff;
+      font-size: 0.74rem;
+      font-weight: 750;
+      backdrop-filter: blur(10px);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #64d98b;
+      box-shadow: 0 0 0 4px rgba(100, 217, 139, 0.16);
+    }
+
+    .profile-details {
+      position: relative;
+      z-index: 1;
+      padding: 18px 8px 8px;
+    }
+
+    .profile-details h2 {
+      margin-bottom: 4px;
+      font-size: 1.18rem;
+      letter-spacing: -0.025em;
+    }
+
+    .profile-details p {
+      margin-bottom: 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .quick-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-solid);
+      font-size: 0.76rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .signal-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 72px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .signal-item {
+      min-height: 116px;
+      padding: 23px;
+      border-right: 1px solid var(--line);
+    }
+
+    .signal-item:last-child {
+      border-right: 0;
+    }
+
+    .signal-item strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 0.95rem;
+      letter-spacing: -0.015em;
+    }
+
+    .signal-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    section {
+      padding: clamp(72px, 9vw, 118px) 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+      gap: clamp(28px, 7vw, 90px);
+      align-items: start;
+      margin-bottom: 46px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.1rem, 4.5vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.052em;
+      text-wrap: balance;
+    }
+
+    .section-heading .intro {
+      max-width: 760px;
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+      gap: 28px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    .about-copy {
+      padding: clamp(28px, 5vw, 50px);
+    }
+
+    .about-copy p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .about-copy p:first-child {
+      color: var(--text);
+      font-size: clamp(1.2rem, 2vw, 1.42rem);
+      line-height: 1.55;
+      font-weight: 650;
+      letter-spacing: -0.025em;
+    }
+
+    .about-copy p:last-child {
+      margin-bottom: 0;
+    }
+
+    .profile-facts {
+      display: grid;
+      align-content: start;
+      padding: 10px 26px;
+    }
+
+    .fact {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact:last-child {
+      border-bottom: 0;
+    }
+
+    .fact span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 0.94rem;
+      line-height: 1.48;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .research-card {
+      min-height: 250px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      transition: transform 170ms ease, border-color 170ms ease, background-color 170ms ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .research-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
+      background: var(--surface-solid);
+    }
+
+    .card-number {
+      display: inline-grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      margin-bottom: 32px;
+      border-radius: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .research-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.12rem;
+      line-height: 1.28;
+      letter-spacing: -0.025em;
+    }
+
+    .research-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .work-card {
+      position: relative;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      padding: clamp(26px, 4vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      overflow: hidden;
+      transition: transform 170ms ease, border-color 170ms ease;
+      backdrop-filter: blur(12px);
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--accent) 42%, var(--line));
+    }
+
+    .work-card::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -90px;
+      top: -90px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent) 15%, transparent);
+    }
+
+    .work-type {
+      position: relative;
+      margin-bottom: 42px;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .work-card h3 {
+      position: relative;
+      max-width: 540px;
+      margin-bottom: 14px;
+      font-size: clamp(1.45rem, 2.7vw, 2.1rem);
+      line-height: 1.13;
+      letter-spacing: -0.04em;
+    }
+
+    .work-card p {
+      position: relative;
+      max-width: 590px;
+      margin-bottom: 26px;
+      color: var(--muted);
+    }
+
+    .tag-row {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 29px;
+      padding: 0 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 720;
+    }
+
+    .text-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-top: auto;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .text-link::after {
+      content: "↗";
+      color: var(--accent);
+      font-size: 1rem;
+      transition: transform 160ms ease;
+    }
+
+    .text-link:hover::after {
+      transform: translate(2px, -2px);
+    }
+
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .academic-card {
+      padding: clamp(28px, 4vw, 40px);
+    }
+
+    .academic-card h3 {
+      margin-bottom: 20px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .clean-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .clean-list li {
+      position: relative;
+      padding: 15px 0 15px 22px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .clean-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .clean-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 25px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .clean-list strong {
+      color: var(--text);
+    }
+
+    .contact-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+      gap: 38px;
+      padding: clamp(34px, 7vw, 72px);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, var(--line));
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 65%, var(--surface)), var(--surface));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .contact-card::after {
+      content: "KDG";
+      position: absolute;
+      right: -12px;
+      bottom: -84px;
+      color: color-mix(in srgb, var(--accent) 8%, transparent);
+      font-size: clamp(8rem, 20vw, 16rem);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: -0.08em;
+      pointer-events: none;
+    }
+
+    .contact-copy,
+    .contact-links {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-copy h2 {
+      max-width: 720px;
+      margin-bottom: 18px;
+      font-size: clamp(2.25rem, 5.5vw, 4.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.058em;
+      text-wrap: balance;
+    }
+
+    .contact-copy p {
+      max-width: 650px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .contact-links {
+      display: grid;
+      align-content: center;
+      gap: 10px;
+    }
+
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 52px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: var(--surface);
+      font-size: 0.88rem;
+      font-weight: 780;
+      text-decoration: none;
+    }
+
+    .contact-links a::after {
+      content: "↗";
+      color: var(--accent);
+    }
+
+    .contact-links a[href^="mailto:"]::after {
+      content: "→";
+    }
+
+    footer {
+      padding: 34px 0 48px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner p {
+      margin: 0;
+    }
+
+    .footer-inner a {
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-heading,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 56px;
+      }
+
+      .profile-card {
+        width: min(100%, 520px);
+      }
+
+      .signal-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .signal-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .signal-item:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .research-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-height: auto;
+      }
+
+      .container {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .header-inner {
+        min-height: 70px;
+        flex-wrap: wrap;
+        padding: 12px 0 10px;
+      }
+
+      .nav-wrap {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      h1 {
+        font-size: clamp(3.15rem, 16vw, 5.1rem);
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .about-grid,
+      .work-grid,
+      .academic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-card {
+        min-height: 0;
+      }
+
+      .card-number {
+        margin-bottom: 22px;
+      }
+
+      .contact-links {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .brand-text strong {
+        max-width: 145px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .signal-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .signal-item,
+      .signal-item:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .signal-item:last-child {
+        border-bottom: 0;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
-<div style="position:absolute;left:50%;margin-left:-306px;top:0px;width:612px;height:792px;border-style:outset;overflow:hidden">
-<div style="position:absolute;left:0px;top:0px">
-<img src="184b4138-0ec8-11eb-8b25-0cc47a792c0a_id_184b4138-0ec8-11eb-8b25-0cc47a792c0a_files/background1.jpg" width=612 height=792></div>
-<div style="position:absolute;left:169.61px;top:36.71px" class="cls_002"><span class="cls_002">KISHOR DATTA GUPTA</span></div>
-<div style="position:absolute;left:148.53px;top:71.97px" class="cls_003"><span class="cls_003">Doctoral student in University of Memphis, USA (+1 4094446929)</span></div>
-<div style="position:absolute;left:54.77px;top:88.51px" class="cls_003"><span class="cls_003">kdgupta87@gmail.com ⋄ github.com/kishordgupta ⋄ scholar.google.com/citations?user=yFREujoAAAAJ</span></div>
-<div style="position:absolute;left:54.00px;top:117.80px" class="cls_003"><span class="cls_003">EDUCATION</span></div>
-<div style="position:absolute;left:70.36px;top:139.13px" class="cls_003"><span class="cls_003">University of Memphis, Tennessee, USA</span></div>
-<div style="position:absolute;left:363.89px;top:139.13px" class="cls_003"><span class="cls_003">PhD, Computer Science (Expected 2021)</span></div>
-<div style="position:absolute;left:70.36px;top:152.68px" class="cls_003"><span class="cls_003">Lamar University, Texas, USA</span></div>
-<div style="position:absolute;left:414.26px;top:152.68px" class="cls_003"><span class="cls_003">MS, Computer Science.(2017)</span></div>
-<div style="position:absolute;left:70.36px;top:166.23px" class="cls_003"><span class="cls_003">Khulna University of Engineering & Technology, BD</span></div>
-<div style="position:absolute;left:408.00px;top:166.23px" class="cls_003"><span class="cls_003">B.Sc, Computer Science.(2011)</span></div>
-<div style="position:absolute;left:54.00px;top:192.53px" class="cls_003"><span class="cls_003">WORK EXPERIENCE</span></div>
-<div style="position:absolute;left:70.36px;top:213.26px" class="cls_003"><span class="cls_003">Biotronik, Oregon, USA</span></div>
-<div style="position:absolute;left:404.91px;top:213.26px" class="cls_003"><span class="cls_003">Summer Intern, 2018-Aug 2018</span></div>
-<div style="position:absolute;left:61.88px;top:231.12px" class="cls_003"><span class="cls_003">· Security and privacy software development for medical internal implants communication.</span></div>
-<div style="position:absolute;left:70.36px;top:256.90px" class="cls_003"><span class="cls_003">Silicon Orchard Ltd, BD-Japan</span></div>
-<div style="position:absolute;left:338.39px;top:256.90px" class="cls_003"><span class="cls_003">Lead Software Engineer, May 2014-July 2016</span></div>
-<div style="position:absolute;left:61.88px;top:274.75px" class="cls_003"><span class="cls_003">· Design software specifications and work as a lead developer for projects involving commerce, crypto-</span></div>
-<div style="position:absolute;left:70.36px;top:288.30px" class="cls_003"><span class="cls_003">coin, Mobile applications, etc. Worked at japan with development team from Cybird co & Laplace.</span></div>
-<div style="position:absolute;left:70.36px;top:314.08px" class="cls_003"><span class="cls_003">Samsung Electronics, BD-S.Korea</span></div>
-<div style="position:absolute;left:362.91px;top:314.08px" class="cls_003"><span class="cls_003">Software Engineer, Nov 2011-April 2014</span></div>
-<div style="position:absolute;left:61.88px;top:331.94px" class="cls_003"><span class="cls_003">· Android OS customization for Samsung phones. Worked in Note3,4,S4 OS customization & localization.</span></div>
-<div style="position:absolute;left:70.36px;top:345.49px" class="cls_003"><span class="cls_003">Worked at S-Korea with Samsung galaxy app teams.</span></div>
-<div style="position:absolute;left:54.00px;top:377.24px" class="cls_003"><span class="cls_003">NOTABLE PROFESSIONAL PROJECTS</span></div>
-<div style="position:absolute;left:70.36px;top:397.97px" class="cls_003"><span class="cls_003">XELS Crypto Coin by xels.io  Worked as chief technology officer, lead the development team,</span></div>
-<div style="position:absolute;left:70.36px;top:411.52px" class="cls_003"><span class="cls_003">designed the block-chain architecture and deployed in distributed platform, Using C++& C# language.</span></div>
-<div style="position:absolute;left:70.36px;top:431.84px" class="cls_003"><span class="cls_003">Chat-on Application by Samsung A mobile communications app for Samsung electronics. Worked</span></div>
-<div style="position:absolute;left:70.36px;top:445.39px" class="cls_003"><span class="cls_003">as a junior software developer,Using Java.</span></div>
-<div style="position:absolute;left:70.36px;top:465.72px" class="cls_003"><span class="cls_003">Barcode footballer by Cybird co.  A football Manager Game based on Barcode witn 10 million</span></div>
-<div style="position:absolute;left:70.36px;top:479.27px" class="cls_003"><span class="cls_003">Downloads. Worked as a software engineer, Developed unity plugin for localization and added security</span></div>
-<div style="position:absolute;left:70.36px;top:492.81px" class="cls_003"><span class="cls_003">patch to protect in app purchases. Using C# and C++.</span></div>
-<div style="position:absolute;left:70.36px;top:513.14px" class="cls_003"><span class="cls_003">Medical Implant device by Biotronik Worked as an intern at developing secure communication</span></div>
-<div style="position:absolute;left:70.36px;top:526.69px" class="cls_003"><span class="cls_003">protocol between mobile app and medical implant signal. Using C++.</span></div>
-<div style="position:absolute;left:70.36px;top:547.01px" class="cls_003"><span class="cls_003">Review checker by isreviewfake.com Check a reviewer is paid or a computer bot using Machine</span></div>
-<div style="position:absolute;left:70.36px;top:560.56px" class="cls_003"><span class="cls_003">learning and NLP. Worked as a a developer. Using Python.</span></div>
-<div style="position:absolute;left:70.36px;top:580.88px" class="cls_003"><span class="cls_003">Silm:Walkie-talkie app by siliconorchard.ca/silm/ Worked as android developer. Using Java.</span></div>
-<div style="position:absolute;left:70.36px;top:601.21px" class="cls_003"><span class="cls_003">Medical Speciality Detector Application (MSDA) Using AI DOI: 10.13140/RG.2.2.26390.78407,</span></div>
-<div style="position:absolute;left:70.36px;top:614.76px" class="cls_003"><span class="cls_003">Worked as System dev, Using Python.</span></div>
-<div style="position:absolute;left:54.00px;top:641.06px" class="cls_003"><span class="cls_003">PUBLICATIONS AS FIRST AUTHOR</span></div>
-<div style="position:absolute;left:80.42px;top:661.79px" class="cls_003"><span class="cls_003">1. Applicability issues of Evasion-Based Adversarial Attacks and Mitigation Techniques, IEEE Sym-</span></div>
-<div style="position:absolute;left:94.36px;top:675.33px" class="cls_003"><span class="cls_003">posium on Computational Intelligence in Cyber Security (IEEE CICS) , SSCI 2020 won best</span></div>
-<div style="position:absolute;left:94.36px;top:688.88px" class="cls_003"><span class="cls_003">paper award</span></div>
-<div style="position:absolute;left:80.42px;top:709.21px" class="cls_003"><span class="cls_003">2. Adversarial Input Detection Using Image Processing Techniques (IPT) Conference: The 11th IEEE</span></div>
-<div style="position:absolute;left:94.36px;top:722.76px" class="cls_003"><span class="cls_003">Annual Ubiquitous Computing, Electronics & Mobile Communication Conference (UEMCON),</span></div>
-<div style="position:absolute;left:94.36px;top:736.31px" class="cls_003"><span class="cls_003">2020</span></div>
-</div>
-<div style="position:absolute;left:50%;margin-left:-306px;top:802px;width:612px;height:792px;border-style:outset;overflow:hidden">
-<div style="position:absolute;left:0px;top:0px">
-<img src="184b4138-0ec8-11eb-8b25-0cc47a792c0a_id_184b4138-0ec8-11eb-8b25-0cc47a792c0a_files/background2.jpg" width=612 height=792></div>
-<div style="position:absolute;left:80.42px;top:43.25px" class="cls_003"><span class="cls_003">3. Shamir’s Secret Sharing for Authentication without Reconstructing Password, CCWC 2020, IEEE,</span></div>
-<div style="position:absolute;left:94.36px;top:56.80px" class="cls_003"><span class="cls_003">Las Vegas, NV, USA, pp. 0958-0963.</span></div>
-<div style="position:absolute;left:80.42px;top:77.12px" class="cls_003"><span class="cls_003">4. A Hybrid POW-POS Implementation Against 51% Attack in Cryptocurrency System. Accepted</span></div>
-<div style="position:absolute;left:94.36px;top:90.67px" class="cls_003"><span class="cls_003">in 11th IEEE International Conference on Cloud Computing Technology and Science (CloudCom</span></div>
-<div style="position:absolute;left:94.36px;top:104.22px" class="cls_003"><span class="cls_003">2019), Sydney, Australia,11-13 Dec 2019.</span></div>
-<div style="position:absolute;left:80.42px;top:124.55px" class="cls_003"><span class="cls_003">5. Smart Crowdsourcing Based Content Review System (SCCRS): An Approach to Improve Trust-</span></div>
-<div style="position:absolute;left:94.36px;top:138.09px" class="cls_003"><span class="cls_003">worthiness of Online Contents. CsoNET. Springer, Cham, 2018.</span></div>
-<div style="position:absolute;left:80.42px;top:158.42px" class="cls_003"><span class="cls_003">6. A genetic algorithm approach to regenerate image from a reduce scaled image using bit data count.</span></div>
-<div style="position:absolute;left:94.36px;top:171.97px" class="cls_003"><span class="cls_003">BRAIN. Broad Research in Artificial Intelligence and Neuroscience 9.2 (2018): 34-44.</span></div>
-<div style="position:absolute;left:80.42px;top:192.29px" class="cls_003"><span class="cls_003">7. A Robust Approach of Facial Orientation Recognition from Facial Features. BRAIN. Broad Re-</span></div>
-<div style="position:absolute;left:94.36px;top:205.84px" class="cls_003"><span class="cls_003">search in Artificial Intelligence and Neuroscience 8.3 (2017): 5-12.</span></div>
-<div style="position:absolute;left:80.42px;top:226.16px" class="cls_003"><span class="cls_003">8. Extending the Storage Capacity And Noise Reduction of a Faster QR-Code.  BRAIN. Broad</span></div>
-<div style="position:absolute;left:94.36px;top:239.71px" class="cls_003"><span class="cls_003">Research in Artificial Intelligence and Neuroscience 9.1 (2018): 59-71.</span></div>
-<div style="position:absolute;left:80.42px;top:260.04px" class="cls_003"><span class="cls_003">9. Solving QR Code Distortions using a Recursive-based Backtracking Algorithm.  BRAIN. Broad</span></div>
-<div style="position:absolute;left:94.36px;top:273.59px" class="cls_003"><span class="cls_003">Research in Artificial Intelligence and Neuroscience 10.2 (2019): 14-25</span></div>
-<div style="position:absolute;left:54.00px;top:299.89px" class="cls_003"><span class="cls_003">PUBLICATIONS AS CO-AUTHOR</span></div>
-<div style="position:absolute;left:80.42px;top:320.61px" class="cls_003"><span class="cls_003">1.</span></div>
-<div style="position:absolute;left:94.36px;top:320.61px" class="cls_003"><span class="cls_003">Ahsan, Md Manjurul, et al.  Applications and Evaluations of Bio-Inspired Approaches in Cloud</span></div>
-<div style="position:absolute;left:94.36px;top:334.16px" class="cls_003"><span class="cls_003">Security: A Review DOI: 10.1109/ACCESS.2020.3027841</span></div>
-<div style="position:absolute;left:80.42px;top:354.49px" class="cls_003"><span class="cls_003">2.</span></div>
-<div style="position:absolute;left:94.36px;top:354.49px" class="cls_003"><span class="cls_003">Sadman et al, ”Can NLP techniques be utilized as a reliable tool for medical science?” -Building</span></div>
-<div style="position:absolute;left:94.36px;top:368.04px" class="cls_003"><span class="cls_003">a NLP Framework to Classify Medical Reports, IEEE 11th Annual Information Technology, Elec-</span></div>
-<div style="position:absolute;left:94.36px;top:381.59px" class="cls_003"><span class="cls_003">tronics and Mobile Communication Conference (IEEE IEMCON 2020)</span></div>
-<div style="position:absolute;left:80.42px;top:401.91px" class="cls_003"><span class="cls_003">3.</span></div>
-<div style="position:absolute;left:94.36px;top:401.91px" class="cls_003"><span class="cls_003">Sen, Sajib et al, An Empirical Study on Algorithmic Bias, 2020 IEEE 44th Annual Computers,</span></div>
-<div style="position:absolute;left:94.36px;top:415.46px" class="cls_003"><span class="cls_003">Software, and Applications Conference (COMPSAC), Madrid, Span.</span></div>
-<div style="position:absolute;left:80.42px;top:435.78px" class="cls_003"><span class="cls_003">4.</span></div>
-<div style="position:absolute;left:94.36px;top:435.78px" class="cls_003"><span class="cls_003">Khan, Anik et al, CIDMP: Completely Interpretable Detection of Malaria Parasite in Red Blood</span></div>
-<div style="position:absolute;left:94.36px;top:449.33px" class="cls_003"><span class="cls_003">Cells using Lower-dimensional Feature Space, IJCNN 2020.</span></div>
-<div style="position:absolute;left:80.42px;top:469.66px" class="cls_003"><span class="cls_003">5.</span></div>
-<div style="position:absolute;left:94.36px;top:469.66px" class="cls_003"><span class="cls_003">Sadman et al, Stylometry as a Reliable Method for Fallback Authentication, IEEE ECTI-CON</span></div>
-<div style="position:absolute;left:94.36px;top:483.20px" class="cls_003"><span class="cls_003">2020</span></div>
-<div style="position:absolute;left:80.42px;top:503.53px" class="cls_003"><span class="cls_003">6.</span></div>
-<div style="position:absolute;left:94.36px;top:503.53px" class="cls_003"><span class="cls_003">Poudyal et al. A multi-level ransomware detection framework using natural language processing</span></div>
-<div style="position:absolute;left:94.36px;top:517.08px" class="cls_003"><span class="cls_003">and machine learning. MALCON. 2019.</span></div>
-<div style="position:absolute;left:80.42px;top:537.40px" class="cls_003"><span class="cls_003">7.</span></div>
-<div style="position:absolute;left:94.36px;top:537.40px" class="cls_003"><span class="cls_003">Poudyal et al.  Malware Analytics:  Review of Data Mining, Machine Learning and Big Data</span></div>
-<div style="position:absolute;left:94.36px;top:550.95px" class="cls_003"><span class="cls_003">Perspectives. SSCI. IEEE, 2019.</span></div>
-<div style="position:absolute;left:80.42px;top:571.27px" class="cls_003"><span class="cls_003">8.</span></div>
-<div style="position:absolute;left:94.36px;top:571.27px" class="cls_003"><span class="cls_003">Dasgupta, Dipankar et al. A survey of blockchain from security perspective. Journal of Banking</span></div>
-<div style="position:absolute;left:94.36px;top:584.82px" class="cls_003"><span class="cls_003">and Financial Technology 3.1 (2019): 1-17.</span></div>
-<div style="position:absolute;left:80.42px;top:605.15px" class="cls_003"><span class="cls_003">9.</span></div>
-<div style="position:absolute;left:94.36px;top:605.15px" class="cls_003"><span class="cls_003">Sadman, Nafiz et al. Detect review manipulation by leveraging reviewer historical stylometrics in</span></div>
-<div style="position:absolute;left:94.36px;top:618.70px" class="cls_003"><span class="cls_003">Amazon, Yelp, Facebook and Google reviews, ICEBA 2020, Kuala Lumpur, Malaysia.</span></div>
-<div style="position:absolute;left:74.97px;top:639.02px" class="cls_003"><span class="cls_003">10.</span></div>
-<div style="position:absolute;left:94.36px;top:639.02px" class="cls_003"><span class="cls_003">Sen, Sajib, et el.  Leveraging Machine Learning Approach to Setup Software-Defined Network</span></div>
-<div style="position:absolute;left:94.36px;top:652.57px" class="cls_003"><span class="cls_003">(SDN) Controller Rules During DDoS Attack. Proceedings of IJCCI. Springer, Singapore, 2020.</span></div>
-<div style="position:absolute;left:74.97px;top:672.89px" class="cls_003"><span class="cls_003">11.</span></div>
-<div style="position:absolute;left:94.36px;top:672.89px" class="cls_003"><span class="cls_003">Poudyal, Subash, et al.  PEFile Analysis:  A Static Approach To Ransomware Analysis, The</span></div>
-<div style="position:absolute;left:94.36px;top:686.44px" class="cls_003"><span class="cls_003">International Journal of Forensic Computer Science, Chapter: 14 ,Publisher: IJoFCS, 2019</span></div>
-<div style="position:absolute;left:74.97px;top:706.77px" class="cls_003"><span class="cls_003">12.</span></div>
-<div style="position:absolute;left:94.36px;top:706.77px" class="cls_003"><span class="cls_003">Ahsan, Md Manjurul, et al. Study of Different Deep Learning Approach with Explainable AI for</span></div>
-<div style="position:absolute;left:94.36px;top:720.32px" class="cls_003"><span class="cls_003">Screening Patients with COVID-19 Symptoms: Using CT Scan and Chest X-ray Image Dataset.,</span></div>
-<div style="position:absolute;left:94.36px;top:733.86px" class="cls_003"><span class="cls_003">arXiv preprint arXiv:2007.12525 (2020). (accepted in MDPI Make journal)</span></div>
-</div>
-<div style="position:absolute;left:50%;margin-left:-306px;top:1604px;width:612px;height:792px;border-style:outset;overflow:hidden">
-<div style="position:absolute;left:0px;top:0px">
-<img src="184b4138-0ec8-11eb-8b25-0cc47a792c0a_id_184b4138-0ec8-11eb-8b25-0cc47a792c0a_files/background3.jpg" width=612 height=792></div>
-<div style="position:absolute;left:74.97px;top:43.25px" class="cls_003"><span class="cls_003">13. Islam et al.  Map Reduce Implementation for Malicious Websites Classification.  August 2019</span></div>
-<div style="position:absolute;left:94.36px;top:56.80px" class="cls_003"><span class="cls_003">International Journal of Network Security & Its Applications 11(5) DOI: 10.5121/ijnsa.2019.11503</span></div>
-<div style="position:absolute;left:74.97px;top:77.12px" class="cls_003"><span class="cls_003">14. Khan, Anik et al, Resolution Enhancement of Electron Microscopic Volume by Volume Restoration</span></div>
-<div style="position:absolute;left:94.36px;top:90.67px" class="cls_003"><span class="cls_003">Technique. DOI: 10.5121/csit.2019.90710</span></div>
-<div style="position:absolute;left:74.97px;top:111.00px" class="cls_003"><span class="cls_003">15. A Genetic Algorithm Approach to Optimize Dispatching for A Microgrid Energy System with</span></div>
-<div style="position:absolute;left:94.36px;top:124.55px" class="cls_003"><span class="cls_003">Renewable Energy Sources.  10.5121/csit.2019.91401, 5th International Conference on Computer</span></div>
-<div style="position:absolute;left:94.36px;top:138.09px" class="cls_003"><span class="cls_003">Science and Information Technology. At: Dubai, UAE</span></div>
-<div style="position:absolute;left:54.00px;top:164.40px" class="cls_003"><span class="cls_003">OTHERS</span></div>
-<div style="position:absolute;left:70.36px;top:197.87px" class="cls_003"><span class="cls_003">Research Interest: Computer algorithm security, Algorithm biasness, Adversarial Machine Learning,</span></div>
-<div style="position:absolute;left:70.36px;top:211.42px" class="cls_003"><span class="cls_003">Computer vision, etc.</span></div>
-<div style="position:absolute;left:70.36px;top:231.74px" class="cls_003"><span class="cls_003">Awards:</span></div>
-<div style="position:absolute;left:83.46px;top:252.07px" class="cls_003"><span class="cls_003">• Employee of the month in Samsung R&D Centre, Bangladesh (April-2013).</span></div>
-<div style="position:absolute;left:83.46px;top:272.39px" class="cls_003"><span class="cls_003">• Best paper award in SSCI, 2020</span></div>
-<div style="position:absolute;left:70.36px;top:292.71px" class="cls_003"><span class="cls_003">Technical Blogs:  </span><A HREF="http://www.codeproject.com/members/kdgupta87/">www.codeproject.com/Members/kdgupta87</A> & kishordgupta.wordpress.com</div>
-<div style="position:absolute;left:70.36px;top:313.04px" class="cls_003"><span class="cls_003">Programming Languages  Expert in c#, Java, python. Familiar with R, Julia, php,</span></div>
-<div style="position:absolute;left:70.36px;top:333.36px" class="cls_003"><span class="cls_003">Frameworks, platforms and tools  Expert in xamarin, android, pytorch, tensorflow. Experienced</span></div>
-<div style="position:absolute;left:70.36px;top:346.91px" class="cls_003"><span class="cls_003">with AWS, azure, docker, git.</span></div>
-<div style="position:absolute;left:70.36px;top:367.24px" class="cls_003"><span class="cls_003">Extra curricular activities.  Reviewer in IEEE ACCESS journal and Springer Journal of Banking</span></div>
-<div style="position:absolute;left:70.36px;top:380.78px" class="cls_003"><span class="cls_003">and Financial Technology</span></div>
-</div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Kishor Datta Gupta home">
+        <span class="brand-mark" aria-hidden="true">KDG</span>
+        <span class="brand-text">
+          <strong>Kishor Datta Gupta</strong>
+          <span>AI · Security · Autonomy</span>
+        </span>
+      </a>
+
+      <div class="nav-wrap">
+        <nav aria-label="Primary navigation">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#work">Featured work</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">
+          <span id="theme-icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Trustworthy intelligence for physical systems</p>
+            <h1 id="hero-title">Kishor Datta <span class="surname">Gupta</span>, Ph.D.</h1>
+            <p class="hero-role">Assistant Professor in Cyber-Physical Systems at Clark Atlanta University.</p>
+            <p class="hero-lead">I develop AI systems that combine learning, physical knowledge, and security for autonomous platforms, critical infrastructure, and high-consequence decision environments.</p>
+            <div class="hero-actions">
+              <a class="button" href="#work">Explore featured work <span aria-hidden="true">→</span></a>
+              <a class="button secondary" href="https://scholar.google.com/citations?hl=en&user=yFREujoAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <aside class="profile-card" aria-label="Profile summary">
+            <div class="portrait-wrap">
+              <img src="https://avatars.githubusercontent.com/u/2458509?v=4" width="460" height="478" alt="Portrait of Dr. Kishor Datta Gupta">
+              <span class="status-badge"><span class="status-dot" aria-hidden="true"></span> Research and student collaboration</span>
+            </div>
+            <div class="profile-details">
+              <h2>AI, cybersecurity, and cyber-physical systems</h2>
+              <p>Atlanta, Georgia · IEEE Senior Member</p>
+              <div class="quick-links">
+                <a href="https://www.cau.edu/directory/dr-kishor-datta-gupta" target="_blank" rel="noopener noreferrer">CAU profile</a>
+                <a href="https://github.com/kishordgupta" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://orcid.org/0000-0001-6867-2653" target="_blank" rel="noopener noreferrer">ORCID</a>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <div class="signal-strip" aria-label="Research themes">
+          <div class="signal-item">
+            <strong>Trustworthy AI</strong>
+            <span>Evaluation, robustness, explainability, and adversarial resilience.</span>
+          </div>
+          <div class="signal-item">
+            <strong>Physical and Agentic AI</strong>
+            <span>World models, edge intelligence, robotics, and autonomous systems.</span>
+          </div>
+          <div class="signal-item">
+            <strong>Multimodal Systems</strong>
+            <span>Vision, language, sensor fusion, knowledge graphs, and retrieval.</span>
+          </div>
+          <div class="signal-item">
+            <strong>Critical Infrastructure</strong>
+            <span>ICS, SCADA, cyber-physical security, and assured operations.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2 id="about-title">Research grounded in real systems.</h2>
+          </div>
+          <p class="intro">My work focuses on AI that must remain useful when data are incomplete, models are attacked, computing resources are limited, and decisions affect physical operations.</p>
+        </div>
+
+        <div class="about-grid">
+          <article class="panel about-copy">
+            <p>Dr. Kishor Datta Gupta is a tenure-track Assistant Professor in the Department of Cyber-Physical Systems at Clark Atlanta University.</p>
+            <p>His research connects artificial intelligence, machine learning, cybersecurity, and cyber-physical systems. Current directions include trustworthy and adversarial AI, physics-guided learning, knowledge graphs, multimodal perception, LLM and VLM evaluation, UAV autonomy, edge AI, robotics, and security for industrial control systems.</p>
+            <p>He has participated in research awards and collaborations involving AFRL, NASA, the U.S. Nuclear Regulatory Commission, Army Research Laboratory programs, Google-supported initiatives, and HBCU research partnerships. He also brings prior industry experience in mobile systems and software research.</p>
+          </article>
+
+          <aside class="panel profile-facts" aria-label="Academic profile facts">
+            <div class="fact">
+              <span>Current appointment</span>
+              <strong>Assistant Professor, Clark Atlanta University</strong>
+            </div>
+            <div class="fact">
+              <span>Education</span>
+              <strong>Ph.D. in Computer Science, University of Memphis, 2021</strong>
+            </div>
+            <div class="fact">
+              <span>Research experience</span>
+              <strong>Visiting Faculty Researcher, Air Force Research Laboratory</strong>
+            </div>
+            <div class="fact">
+              <span>Professional recognition</span>
+              <strong>Senior Member, IEEE</strong>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Research</p>
+            <h2 id="research-title">Core areas of inquiry.</h2>
+          </div>
+          <p class="intro">The research program combines data-driven learning with physical structure, deterministic knowledge, security analysis, and operational evaluation.</p>
+        </div>
+
+        <div class="research-grid">
+          <article class="research-card">
+            <span class="card-number">01</span>
+            <h3>Trustworthy and Adversarial AI</h3>
+            <p>Robustness, explainability, attack and defense methods, model monitoring, and dependable evaluation beyond aggregate accuracy.</p>
+          </article>
+          <article class="research-card">
+            <span class="card-number">02</span>
+            <h3>Physics- and Knowledge-Guided Learning</h3>
+            <p>Neural models informed by physical constraints, knowledge graphs, structured rules, and domain evidence.</p>
+          </article>
+          <article class="research-card">
+            <span class="card-number">03</span>
+            <h3>LLM and VLM Evaluation</h3>
+            <p>Continuous assessment of hallucination, bias, drift, robustness, grounding, source use, and response consistency.</p>
+          </article>
+          <article class="research-card">
+            <span class="card-number">04</span>
+            <h3>Multimodal Perception</h3>
+            <p>Fusion of images, language, thermal data, LiDAR, and other sensor signals for retrieval and situational understanding.</p>
+          </article>
+          <article class="research-card">
+            <span class="card-number">05</span>
+            <h3>Autonomy, Edge AI, and Robotics</h3>
+            <p>Resource-aware perception and decision systems for UAVs, robots, VLA pipelines, and world-model-based autonomy.</p>
+          </article>
+          <article class="research-card">
+            <span class="card-number">06</span>
+            <h3>Critical Infrastructure Security</h3>
+            <p>Cybersecurity for industrial control systems, SCADA, nuclear and manufacturing environments, and cyber-physical operations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Featured work</p>
+            <h2 id="work-title">Selected projects and outputs.</h2>
+          </div>
+          <p class="intro">A selection of current research platforms, open resources, and scholarly work across trustworthy AI and cyber-physical security.</p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="work-type">Research platform</span>
+            <h3>MonitorLLM</h3>
+            <p>A continuous monitoring framework that uses deterministic knowledge-graph structures to assess generative AI behavior, including hallucination, bias, robustness, latency, and drift.</p>
+            <div class="tag-row" aria-label="MonitorLLM topics">
+              <span class="tag">LLM evaluation</span>
+              <span class="tag">Knowledge graphs</span>
+              <span class="tag">Responsible AI</span>
+            </div>
+            <a class="text-link" href="https://monitorllm.com/" target="_blank" rel="noopener noreferrer">Visit MonitorLLM</a>
+          </article>
+
+          <article class="work-card">
+            <span class="work-type">Open research resource</span>
+            <h3>Large Multimodal Model Evaluation Survey</h3>
+            <p>An open repository organizing methods, benchmarks, and research directions for evaluating large language and multimodal models across capabilities and risks.</p>
+            <div class="tag-row" aria-label="Survey topics">
+              <span class="tag">VLMs</span>
+              <span class="tag">Benchmarks</span>
+              <span class="tag">Evaluation methods</span>
+            </div>
+            <a class="text-link" href="https://github.com/kishordgupta/LMM-Evaluation-Survey" target="_blank" rel="noopener noreferrer">View the GitHub repository</a>
+          </article>
+
+          <article class="work-card">
+            <span class="work-type">Physical AI and education</span>
+            <h3>World Models, VLA, and Autonomous Systems</h3>
+            <p>Research and teaching resources covering embodied intelligence, vision-language-action systems, resource-aware autonomy, and emerging world-model approaches.</p>
+            <div class="tag-row" aria-label="Physical AI topics">
+              <span class="tag">World models</span>
+              <span class="tag">VLA</span>
+              <span class="tag">Robotics</span>
+              <span class="tag">Edge AI</span>
+            </div>
+            <a class="text-link" href="https://github.com/kishordgupta/Physical_AI_course" target="_blank" rel="noopener noreferrer">Explore course resources</a>
+          </article>
+
+          <article class="work-card">
+            <span class="work-type">Book · Springer · 2026</span>
+            <h3>Securing Industrial Control Systems</h3>
+            <p><em>Advanced Strategies and Technologies</em> presents industrial control and SCADA architectures, attack surfaces, risk, resilience, and practical security approaches for critical systems.</p>
+            <div class="tag-row" aria-label="Book topics">
+              <span class="tag">ICS</span>
+              <span class="tag">SCADA</span>
+              <span class="tag">Cyber resilience</span>
+            </div>
+            <a class="text-link" href="https://link.springer.com/book/10.1007/978-3-032-03018-4" target="_blank" rel="noopener noreferrer">View the Springer book</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching" aria-labelledby="teaching-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Teaching and mentoring</p>
+            <h2 id="teaching-title">Learning through implementation and research.</h2>
+          </div>
+          <p class="intro">Courses emphasize technical foundations, reproducible experiments, critical evaluation, and project-based communication.</p>
+        </div>
+
+        <div class="academic-grid">
+          <article class="panel academic-card">
+            <h3>Teaching areas</h3>
+            <ul class="clean-list">
+              <li><strong>Machine Learning and Advanced Machine Learning</strong> — predictive modeling, deep learning, transformers, and multimodal AI.</li>
+              <li><strong>Operating Systems and Advanced Operating Systems</strong> — processes, concurrency, distributed systems, security, cloud, and edge computing.</li>
+              <li><strong>Advanced Algorithms</strong> — graph algorithms, randomized and approximation methods, complexity, and research applications.</li>
+              <li><strong>Computer Vision and Physical AI</strong> — perception, detection, vision transformers, VLMs, VLA systems, and world models.</li>
+            </ul>
+          </article>
+
+          <article class="panel academic-card">
+            <h3>Student research</h3>
+            <ul class="clean-list">
+              <li>Undergraduate, M.S., and Ph.D. research in AI, cybersecurity, autonomous systems, and digital twins.</li>
+              <li>Hands-on projects using real datasets, reproducible code, GitHub documentation, and technical demonstrations.</li>
+              <li>Research preparation for papers, posters, proposals, competitions, internships, and conference presentations.</li>
+              <li>Current opportunities are coordinated through Clark Atlanta University and the Gupta Lab.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-copy">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Research, student, and institutional collaboration.</h2>
+            <p>For research discussions, student opportunities, invited talks, or academic collaboration, use the institutional email or professional profiles listed here.</p>
+            <a class="button" href="mailto:kgupta@cau.edu">Email kgupta@cau.edu <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="contact-links" aria-label="Professional profiles">
+            <a href="https://www.cau.edu/directory/dr-kishor-datta-gupta" target="_blank" rel="noopener noreferrer">Clark Atlanta University</a>
+            <a href="https://scholar.google.com/citations?hl=en&user=yFREujoAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="https://github.com/kishordgupta" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://orcid.org/0000-0001-6867-2653" target="_blank" rel="noopener noreferrer">ORCID</a>
+            <a href="https://www.linkedin.com/in/kishordattagupta/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.kishordgupta.com/" target="_blank" rel="noopener noreferrer">Current website</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Kishor Datta Gupta. Academic portfolio.</p>
+      <p><a href="#top">Back to top ↑</a></p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const icon = document.getElementById('theme-icon');
+      const stored = localStorage.getItem('kdg-theme');
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initial = stored || (systemDark ? 'dark' : 'light');
+
+      function applyTheme(theme) {
+        root.dataset.theme = theme;
+        icon.textContent = theme === 'dark' ? '☀' : '◐';
+        toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'dark' ? '#0c0f15' : '#f5f5f2');
+      }
+
+      applyTheme(initial);
+
+      toggle.addEventListener('click', function () {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('kdg-theme', next);
+        applyTheme(next);
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    }());
+  </script>
 </body>
 </html>
