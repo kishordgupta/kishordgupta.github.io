@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Computer Vision course syllabus with progressive OpenCV, CNN, YOLO, ResNet, Vision Transformer, VLM, and world-model assignments. Each assignment includes a GitHub repository and narrated demo video workflow.">
+  <title>Computer Vision Course Syllabus and GitHub Video Workflow</title>
+  <style>
+:root {
+  --navy: #103a5d;
+  --navy-deep: #0a2c49;
+  --rule: #78a9c8;
+  --ink: #1f2830;
+  --muted: #66727d;
+  --border: #8c99a3;
+  --row: #eef3f6;
+  --row-strong: #e1ebf1;
+  --paper: #ffffff;
+  --screen: #e8ebee;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--screen);
+  font-family: "Noto Serif", "Times New Roman", serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.screen-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 8px 18px;
+  color: #fff;
+  background: rgba(10, 44, 73, .97);
+  box-shadow: 0 2px 10px rgba(0,0,0,.20);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.screen-toolbar .toolbar-title { font-size: 14px; font-weight: 700; white-space: nowrap; }
+.screen-toolbar nav { display: flex; flex-wrap: wrap; gap: 6px 14px; justify-content: center; }
+.screen-toolbar a { color: #eaf4fb; text-decoration: none; font-size: 12px; }
+.screen-toolbar a:hover, .screen-toolbar a:focus { text-decoration: underline; }
+.screen-toolbar button {
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 4px;
+  padding: 7px 12px;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+.screen-toolbar button:hover, .screen-toolbar button:focus { background: rgba(255,255,255,.12); }
+
+.document { padding: 22px 0 34px; }
+.page {
+  position: relative;
+  width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto 22px;
+  padding: .30in .72in .44in;
+  background: var(--paper);
+  box-shadow: 0 4px 18px rgba(27, 40, 51, .18);
+  overflow: hidden;
+}
+.page-content { padding-bottom: .20in; }
+.running-head {
+  padding: 0 0 4px;
+  margin: 0 0 10px;
+  color: var(--navy);
+  border-bottom: 1px solid var(--rule);
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+.page-footer {
+  position: absolute;
+  right: .72in;
+  bottom: .25in;
+  color: #5e6972;
+  font-size: 6.8pt;
+}
+
+.course-title {
+  margin: 0 0 5px;
+  padding: 0 0 7px;
+  color: var(--navy);
+  border-bottom: 2px solid #4b91bb;
+  font-size: 24pt;
+  line-height: 1.3625;
+  font-weight: 700;
+  letter-spacing: -.012em;
+}
+.course-subtitle {
+  margin: 0 0 8px;
+  color: #68737c;
+  font-size: 12pt;
+  font-style: italic;
+  letter-spacing: .025em;
+}
+
+h2, h3 { color: var(--navy); break-after: avoid; font-family: Carlito, Arial, Helvetica, sans-serif; }
+h2 {
+  margin: 8pt 0 4pt;
+  font-size: 15pt;
+  line-height: 1.16;
+}
+h3 {
+  margin: 6pt 0 3pt;
+  font-size: 12pt;
+  line-height: 1.16;
+}
+p {
+  margin: 0 0 4pt;
+  font-size: 10pt;
+  line-height: 1.405;
+  text-align: left;
+}
+strong { font-weight: 700; }
+.evidence-standard { margin-bottom: 7px; }
+.submission-gate { font-weight: 700; margin-top: 6px; }
+.continuation-paragraph { margin-top: 0; }
+
+ul {
+  margin: 2pt 0 6pt 18px;
+  padding: 0;
+  font-size: 10pt;
+  line-height: 1.35;
+}
+li { margin: 0 0 2pt; padding-left: 1px; }
+.continuation-list { margin-top: 0; }
+
+.table-wrap {
+  width: 100%;
+  margin: 4px 0 7px;
+  overflow: visible;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 8pt;
+  line-height: 1.30;
+}
+caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+th, td {
+  border: .55px solid var(--border);
+  padding: 4.5px 4px;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+thead th {
+  color: #fff;
+  background: var(--navy-deep);
+  font-weight: 700;
+  text-align: center;
+}
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th { background: var(--row); }
+tbody tr:nth-child(even) td,
+tbody tr:nth-child(even) th { background: #fff; }
+
+.metadata { margin-bottom: 8px; font-size: 9pt; }
+.metadata th {
+  color: var(--navy);
+  background: var(--row-strong) !important;
+  text-align: left;
+  font-weight: 700;
+}
+.metadata td { background: #f8fafb !important; }
+.assessment td:last-child,
+.grades td,
+.rubric td:last-child,
+.focus td:last-child,
+.schedule td:first-child,
+.outcomes td:first-child,
+.outcomes td:last-child { text-align: center; }
+.assignments td:nth-child(2) { text-align: center; }
+.outcomes { font-size: 8.5pt; }
+.assessment { font-size: 8pt; }
+.grades { font-size: 9pt; }
+.assignments { font-size: 7pt; line-height: 1.30; }
+.workflow { font-size: 7pt; line-height: 1.30; }
+.focus { font-size: 6.5pt; line-height: 1.28; }
+.rubric { font-size: 8pt; }
+.schedule { font-size: 7.5pt; line-height: 1.28; }
+.milestones { font-size: 7.5pt; line-height: 1.28; }
+.dense th, .dense td { padding: 4.5px 3.5px; }
+.compact th, .compact td { padding: 4.5px 3.5px; }
+code {
+  font-family: "Courier New", Courier, monospace;
+  font-size: .94em;
+  background: transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .screen-toolbar { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .screen-toolbar nav { justify-content: flex-start; }
+  .document { padding: 0; }
+  .page {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 24px 18px 34px;
+    box-shadow: none;
+    border-bottom: 10px solid var(--screen);
+    overflow: visible;
+  }
+  .page-footer { position: static; margin-top: 16px; text-align: right; }
+  .table-wrap { overflow-x: auto; }
+  table { min-width: 720px; }
+  .metadata, .grades, .assessment, .rubric { min-width: 480px; }
+  p, ul { font-size: 10.3pt; line-height: 1.38; }
+  h2 { font-size: 13pt; }
+  h3 { font-size: 11.5pt; }
+  table { font-size: 9pt; line-height: 1.28; }
+  .dense, .compact { font-size: 8.7pt; line-height: 1.24; }
+}
+
+@media print {
+  @page { size: Letter; margin: 0; }
+  html, body { width: 8.5in; background: #fff; }
+  .screen-toolbar { display: none !important; }
+  .document { padding: 0; }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0;
+    box-shadow: none;
+    break-after: page;
+    page-break-after: always;
+  }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  thead { display: table-header-group; }
+  tr, td, th { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+  <header class="screen-toolbar" aria-label="Document controls">
+    <div class="toolbar-title">Computer Vision Course Syllabus</div>
+    <nav aria-label="Syllabus sections">
+      <a href="index.html">Academic Portfolio</a>
+      <a href="#overview">Overview</a>
+      <a href="#assignments">Assignments</a>
+      <a href="#workflow">GitHub &amp; Video Workflow</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#final-project">Final Project</a>
+      <a href="#policies">Policies</a>
+    </nav>
+    <button type="button" onclick="window.print()">Print / Save PDF</button>
+  </header>
+  <div class="document"><section class="page cover-page" id="page-1" aria-label="Syllabus page 1">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><h1 class="course-title">Computer Vision: From OpenCV to<br>Vision-Language and World Models</h1><p class="course-subtitle">Proposed Course Syllabus and Progressive Assignment Plan</p><div class="table-wrap"><table class="data-table metadata"><caption>Course information</caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><tbody><tr><th scope="row">Institution</th><td>Clark Atlanta University</td></tr><tr><th scope="row">Instructor</th><td>Dr. Kishor Datta Gupta</td></tr><tr><th scope="row">Course Number</th><td>CPS/CS XXXX</td></tr><tr><th scope="row">Level</th><td>Upper-level undergraduate / introductory graduate</td></tr><tr><th scope="row">Credits</th><td>3 credit hours</td></tr><tr><th scope="row">Delivery</th><td>Hybrid, laboratory-centered instruction</td></tr><tr><th scope="row">Classroom/Lab</th><td>Room 1012 and the course LMS</td></tr><tr><th scope="row">Semester</th><td>To be assigned</td></tr></tbody></table></div><h2 id="overview">1. Course Overview</h2><p>This application-centered course develops computer vision systems from basic image operations to modern predictive visual intelligence. Students begin with image representation and OpenCV, then implement convolutional neural networks, train YOLO object detectors, apply ResNet transfer learning, fine-tune vision transformers, evaluate vision-language models, and construct a small predictive world-model pipeline. The course emphasizes data curation, reproducibility, robustness, model efficiency, ethical use, and the ability to explain what a system does, why its evaluation is valid, and where uncertainty remains.</p><p><strong>Prerequisites. </strong>Python programming; basic linear algebra and probability; prior exposure to machine learning is helpful but not required. A short Python/PyTorch readiness module is provided during Week 1.</p><p><strong>Instructional pattern. </strong>Each class follows a concept → guided demonstration → team laboratory activity → debrief/check → assignment sequence. Most class meetings prioritize implementation, analysis, and troubleshooting rather than extended lecture.</p><p><strong>Computing environment. </strong>Python, Jupyter/Google Colab, OpenCV, PyTorch, torchvision, a YOLO implementation selected by the instructor, scikit-learn, matplotlib, Hugging Face tools, and Git/GitHub or an equivalent version-control platform. GPU access is recommended but not required for every assignment.</p><h2 id="outcomes">2. Course Learning Outcomes</h2><p>By the end of the course, students will be able to:</p><div class="table-wrap"><table class="data-table outcomes"><caption>Course learning outcomes, part one</caption><colgroup><col style="width:33.333%"><col style="width:33.333%"><col style="width:33.334%"></colgroup><thead><tr><th scope="col">Outcome</th><th scope="col">Student Capability</th><th scope="col">Bloom's Level</th></tr></thead><tbody><tr><td>CLO 1</td><td>Explain digital image representation, color spaces, filtering, geometric transformation, features, and standard computer-vision evaluation measures.</td><td>Understand / Analyze</td></tr><tr><td>CLO 2</td><td>Implement reproducible image-processing and classical computer-vision pipelines with OpenCV.</td><td>Apply / Create</td></tr></tbody></table></div></main>
+      <footer class="page-footer">Page 1</footer>
+    </section><section class="page" id="page-2" aria-label="Syllabus page 2">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><div class="table-wrap"><table class="data-table outcomes"><caption>Course learning outcomes, continued</caption><colgroup><col style="width:33.333%"><col style="width:33.333%"><col style="width:33.334%"></colgroup><thead><tr><th scope="col">Outcome</th><th scope="col">Student Capability</th><th scope="col">Bloom's Level</th></tr></thead><tbody><tr><td>CLO 3</td><td>Design, train, debug, and evaluate CNN, YOLO, ResNet, and vision-transformer models for classification and detection.</td><td>Apply / Analyze</td></tr><tr><td>CLO 4</td><td>Compare models using accuracy, class-level errors, robustness, latency, memory, and deployment constraints rather than relying on a single score.</td><td>Analyze / Evaluate</td></tr><tr><td>CLO 5</td><td>Use and evaluate vision-language models for zero-shot recognition, image-text retrieval, captioning, visual question answering, or grounded reasoning.</td><td>Apply / Evaluate</td></tr><tr><td>CLO 6</td><td>Implement a small temporal prediction or latent world-model experiment and explain how predictive representation learning differs from static recognition.</td><td>Analyze / Create</td></tr><tr><td>CLO 7</td><td>Curate and document datasets; identify bias, privacy, safety, licensing, and misuse concerns; and propose appropriate human-review controls.</td><td>Evaluate / Create</td></tr><tr><td>CLO 8</td><td>Communicate a complete computer-vision project through documented code, a technical report, quantitative evidence, a live demonstration, and an individual defense.</td><td>Create</td></tr></tbody></table></div><h2 id="resources">3. Learning Resources</h2><p>No single textbook is required. Selected chapters, tutorials, documentation, and research papers will be posted in the LMS. Recommended references include:</p><ul><li>Richard Szeliski, Computer Vision: Algorithms and Applications.</li><li>Official OpenCV and PyTorch documentation and instructor-provided notebooks.</li><li>Selected papers and technical readings on CNNs, YOLO, residual networks, vision transformers, vision-language models, JEPA-style learning, and world models.</li><li>Instructor-provided model cards, dataset cards, reproducibility checklists, and evaluation templates.</li></ul><h2 id="grading">4. Assessment and Grading</h2><div class="table-wrap"><table class="data-table assessment"><caption>Assessment and grading weights</caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr><th scope="col">Assessment Component</th><th scope="col">Weight</th></tr></thead><tbody><tr><td>Readiness quizzes and concept checks</td><td>10%</td></tr><tr><td>GitHub-based programming assignments, laboratory reports, and demo videos</td><td>45%</td></tr><tr><td>Midterm individual practical assessment</td><td>10%</td></tr><tr><td>Final project: milestones, code, report, demonstration, and oral defense</td><td>30%</td></tr><tr><td>Participation, peer review, and professional laboratory practice</td><td>5%</td></tr><tr><td>Total</td><td>100%</td></tr></tbody></table></div></main>
+      <footer class="page-footer">Page 2</footer>
+    </section><section class="page" id="page-3" aria-label="Syllabus page 3">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><p class="evidence-standard">Every technical assignment is graded using a common evidence standard: functional correctness, experimental design, evaluation quality, reproducibility, interpretation of limitations, and responsible use of data and AI tools. A high accuracy value without a defensible evaluation will not receive full credit.</p><div class="table-wrap"><table class="data-table grades"><caption>Letter grade scale</caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr><th scope="col">Letter Grade</th><th scope="col">Percentage</th></tr></thead><tbody><tr><td>A</td><td>90–100</td></tr><tr><td>B</td><td>80–89</td></tr><tr><td>C</td><td>70–79</td></tr><tr><td>D</td><td>60–69</td></tr><tr><td>F</td><td>Below 60</td></tr></tbody></table></div><h2 id="assignments">5. Progressive Assignment List</h2><p>The assignments move from controlled image operations to open-ended multimodal and predictive modeling. Every A0-A10 submission must be delivered as a standalone GitHub repository and an assignment-specific narrated demo video. The repository must contain executable code, environment information, quantitative results, representative visual outputs, a concise interpretation, an AI-use disclosure, and the exact video link.</p><div class="table-wrap"><table class="data-table assignments dense"><caption>Progressive assignments, A0 through A6</caption><colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup><thead><tr><th scope="col">Assignment</th><th scope="col">Timing / Weight</th><th scope="col">What Students Build</th><th scope="col">Required Evidence</th></tr></thead><tbody><tr><td>A0. Environment Setup and Image-as-Data Diagnostic</td><td>Week 1<br>3%</td><td>Load, inspect, visualize, and manipulate image tensors. Verify the Python, OpenCV, and PyTorch environment; explain image shape, channels, numeric range, and dtype.</td><td>Standalone GitHub repository; narrated 3-4-minute demo video; notebook, setup report, five image operations, and a reproducibility check.</td></tr><tr><td>A1. OpenCV Image Processing Laboratory</td><td>Weeks 2–3<br>4%</td><td>Apply color conversion, resizing, cropping, filtering, thresholding, morphology, histograms, edge detection, and geometric transforms.</td><td>Standalone GitHub repository; narrated 4-5-minute demo video; reusable OpenCV pipeline on a small image collection, with before/after evidence and parameter analysis.</td></tr><tr><td>A2. Classical Vision Mini-Application and Data Audit</td><td>Weeks 3–4<br>4%</td><td>Build a contour-, feature-, or motion-based application. Examine annotation quality, imbalance, leakage, privacy, and licensing.</td><td>Standalone GitHub repository; narrated 4-5-minute demo video; working application, dataset card, error cases, and a short ethics and reliability memo.</td></tr><tr><td>A3. CNN Image Classifier from Scratch</td><td>Weeks 5–6<br>5%</td><td>Implement a CNN, construct valid training/validation/test splits, monitor learning, and diagnose underfitting or overfitting.</td><td>Standalone GitHub repository; narrated 5-6-minute demo video; training code, learning curves, confusion matrix, class-level analysis, and final test results.</td></tr><tr><td>A4. CNN Robustness, Augmentation, and Interpretability</td><td>Week 6<br>4%</td><td>Compare augmentation strategies and test blur, noise, compression, occlusion, or domain shift. Inspect model attention using an approved method.</td><td>Standalone GitHub repository; narrated 5-6-minute demo video; controlled comparison, robustness results, visual explanations, and a deployment recommendation.</td></tr><tr><td>A5. YOLO Custom Object Detection</td><td>Weeks 7–8<br>5%</td><td>Prepare bounding-box annotations, train or fine-tune a YOLO detector, and evaluate precision, recall, mAP, and failure modes.</td><td>Standalone GitHub repository; narrated 6-7-minute demo video; custom detector, annotated examples, evaluation plots, error taxonomy, and an inference demo.</td></tr><tr><td>A6. ResNet Transfer Learning and Visual Explanation</td><td>Week 9<br>4%</td><td>Fine-tune a residual network, compare frozen-feature and full fine-tuning strategies, and interpret predictions.</td><td>Standalone GitHub repository; narrated 5-6-minute demo video; ResNet experiment, ablation comparison, class-level analysis, visual explanation, and model card.</td></tr></tbody></table></div></main>
+      <footer class="page-footer">Page 3</footer>
+    </section><section class="page" id="page-4" aria-label="Syllabus page 4">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><div class="table-wrap"><table class="data-table assignments dense"><caption>Progressive assignments, A7 through A10</caption><colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup><thead><tr><th scope="col">Assignment</th><th scope="col">Timing / Weight</th><th scope="col">What Students Build</th><th scope="col">Required Evidence</th></tr></thead><tbody><tr><td>A7. Vision Transformer Fine-Tuning and CNN Comparison</td><td>Weeks 10–11<br>5%</td><td>Fine-tune a vision transformer and compare it with a CNN or ResNet baseline using the same split and compute budget.</td><td>Standalone GitHub repository; narrated 6-7-minute demo video; matched comparison of performance, data efficiency, latency, memory, robustness, and attention behavior.</td></tr><tr><td>A8. Vision-Language Zero-Shot Recognition and Retrieval</td><td>Week 12<br>4%</td><td>Use a CLIP-style or approved VLM for zero-shot classification and image-text retrieval; analyze prompt sensitivity.</td><td>Standalone GitHub repository; narrated 5-6-minute demo video; prompt set, retrieval examples, quantitative results, subgroup errors, and prompt-design reflection.</td></tr><tr><td>A9. VLM Reasoning, Grounding, and Failure Audit</td><td>Week 13<br>4%</td><td>Evaluate an open VLM on captioning, VQA, or grounded reasoning. Identify hallucination, ambiguity, bias, and unsupported claims.</td><td>Standalone GitHub repository; narrated 6-7-minute demo video; evaluation set, scoring protocol, failure taxonomy, grounding analysis, and a human-review policy.</td></tr><tr><td>A10. Predictive World-Model / JEPA-Style Laboratory</td><td>Week 14<br>3%</td><td>Model temporal change in short image or video sequences through next-state prediction, latent prediction, or masked predictive learning.</td><td>Standalone GitHub repository; narrated 6-8-minute demo video; predictive baseline, qualitative rollouts or latent analysis, error-over-horizon results, and comparison with static recognition.</td></tr></tbody></table></div><h3 id="submission-standard">Assignment Submission Standard</h3><ul><li>Each assignment must be submitted as a standalone GitHub repository with an accessible narrated demo video; the final project uses a separate repository and final video.</li><li>The repository must identify the exact release tag and commit hash being graded and must run from a clean environment using the submitted instructions.</li><li>The repository must include a README, environment or requirements file, source code, configurations, data documentation, results, a reproducibility check, an AI-use disclosure, and DEMO_VIDEO.md.</li><li>Training, validation, and test data must remain separated; any exception must be disclosed and justified.</li><li>Results must include class-level or case-level errors, at least one realistic failure condition, and a concise limitation analysis.</li><li>Images, datasets, code, pretrained weights, and external text must be credited according to their licenses and course rules; credentials, API keys, restricted data, and unauthorized large files may not be committed.</li></ul></main>
+      <footer class="page-footer">Page 4</footer>
+    </section><section class="page" id="page-5" aria-label="Syllabus page 5">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><h2 id="workflow">6. Assignment Workflow: GitHub Repository and Demo Video</h2><p>Each assignment is managed as a small, reproducible software or research release. Students may accept a GitHub Classroom assignment or create a repository from the instructor template. The repository and video must represent the same tagged version. Work shown only in the video, but absent from the submitted repository, is not graded.</p><h3 id="development-workflow">Common Development Workflow</h3><div class="table-wrap"><table class="data-table workflow compact"><caption>Common development workflow</caption><colgroup><col style="width:33.333%"><col style="width:33.333%"><col style="width:33.334%"></colgroup><thead><tr><th scope="col">Stage</th><th scope="col">Required Action</th><th scope="col">Repository Evidence</th></tr></thead><tbody><tr><td>1. Initialize</td><td>Create or accept the assignment repository, clone it, review the specification, and confirm repository access.</td><td>Initial commit; completed repository metadata; assignment issue or task list.</td></tr><tr><td>2. Plan</td><td>Define the task, dataset, success criteria, metrics, risks, and a realistic completion plan.</td><td>README problem statement; data source; milestone checklist.</td></tr><tr><td>3. Establish baseline</td><td>Run the starter pipeline or implement the simplest valid baseline before adding advanced components.</td><td>Baseline configuration, output, metric, and dated commit.</td></tr><tr><td>4. Implement</td><td>Develop modular code on a working branch and commit meaningful changes rather than one final code dump.</td><td>Readable source files, configurations, commit history, and comments where needed.</td></tr><tr><td>5. Test and evaluate</td><td>Use fixed splits, controlled comparisons, task-appropriate metrics, and representative success and failure cases.</td><td>Test or validation script; saved metrics; plots; error examples; runtime or resource evidence.</td></tr><tr><td>6. Document</td><td>Explain setup, data, commands, design choices, results, limitations, citations, and AI-assisted work.</td><td>README; <code>DATASET_CARD.md</code>; <code>MODEL_CARD.md</code> when applicable; <code>AI_USE.md</code>.</td></tr><tr><td>7. Release</td><td>Run the repository from a clean environment, resolve broken paths, and tag the exact version for grading.</td><td>Passing repository check; release tag such as v1.0; exact commit hash.</td></tr><tr><td>8. Demonstrate</td><td>Record a narrated screen demonstration of the tagged release, including a live run, results, and one failure case.</td><td><code>DEMO_VIDEO.md</code> with video URL, duration, recording date, release tag, and commit hash.</td></tr><tr><td>9. Submit and verify</td><td>Submit the repository URL, release tag, commit hash, and video URL through the LMS and complete any live verification.</td><td>Accessible links before the deadline; instructor access; concise individual contribution statement.</td></tr></tbody></table></div><h3 id="repository-standard">Minimum GitHub Repository Standard</h3><p>Each assignment must use a separate repository. A repository may be public or private according to instructor direction; private repositories must grant instructor access before the deadline. The minimum structure is:</p><ul><li>README.md: problem, objectives, installation, data access, execution commands, results, failure analysis, limitations, and authorship.</li><li>requirements.txt or environment.yml, plus fixed random seeds and hardware or runtime information needed to reproduce results.</li><li>src/, notebooks/, configs/, tests/, data/README.md, results/, assets/, and docs/ organized so code, data instructions, and evidence are separated.</li><li>DATASET_CARD.md for every assignment using data; MODEL_CARD.md for A3-A10 and the final project.</li><li>AI_USE.md describing tools used, prompts or functions delegated, student verification, and any generated material retained in the submission.</li><li>DEMO_VIDEO.md containing the video URL, exact release tag, commit hash, duration, and a timestamped outline.</li></ul></main>
+      <footer class="page-footer">Page 5</footer>
+    </section><section class="page" id="page-6" aria-label="Syllabus page 6">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><ul class="continuation-list"><li>.github/workflows/ with at least a lightweight structure, syntax, or reproducibility check. Large datasets and model weights should be linked or managed through approved storage rather than committed directly.</li></ul><h3 id="video-standard">Demo Video Standard</h3><ul><li>Begin by showing the assignment title, student name, repository URL, release tag, and commit hash. The video must use the exact version submitted for grading.</li><li>Briefly state the problem, dataset, model or algorithm, and evaluation criteria; avoid spending most of the recording on slides.</li><li>Run the principal command or notebook section and demonstrate the system on at least one success case and one meaningful failure or limitation case.</li><li>Show quantitative results and explain what they mean. A metric screenshot without interpretation is insufficient.</li><li>Conclude with setup and reproduction instructions, known limitations, responsible-use concerns, and the student contribution when work is completed in a team.</li><li>Use readable screen resolution, clear narration, and captions. The video may be unlisted but must remain accessible through the end of the grading and appeal period.</li><li>Minor editing is allowed, but the recording may not conceal failed runs, substitute a different code version, or present another person&#x27;s execution as the student&#x27;s own.</li></ul><h3 id="assignment-video-focus">Assignment-Specific Repository and Video Focus</h3><div class="table-wrap"><table class="data-table focus dense"><caption>Assignment-specific repository and video focus, A0 through A9</caption><colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup><thead><tr><th scope="col">Assignment</th><th scope="col">GitHub Repository Focus</th><th scope="col">Demo Video Focus</th><th scope="col">Length</th></tr></thead><tbody><tr><td>A0: Environment and image data</td><td>Environment check, image loading, tensor inspection, five basic operations, reproducibility log.</td><td>Show installation check, image/tensor properties, operations, and one common setup error.</td><td>3-4 min</td></tr><tr><td>A1: OpenCV processing</td><td>Reusable preprocessing pipeline with parameters, sample inputs, outputs, and comparison figures.</td><td>Run the pipeline and explain how two parameter changes affect image quality or downstream behavior.</td><td>4-5 min</td></tr><tr><td>A2: Classical vision application</td><td>Contour, feature, or motion application; dataset card; data-quality and ethics audit.</td><td>Demonstrate success and failure examples, then explain one data or reliability concern.</td><td>4-5 min</td></tr><tr><td>A3: CNN classifier</td><td>Training and inference scripts, split logic, curves, confusion matrix, checkpoints, and test results.</td><td>Show training evidence, run inference, interpret class-level errors, and identify overfitting or underfitting.</td><td>5-6 min</td></tr><tr><td>A4: CNN robustness</td><td>Perturbation and augmentation experiments, explanation maps, controlled comparison, and recommendation.</td><td>Compare clean and corrupted inputs, show explanation maps, and discuss a deployment limitation.</td><td>5-6 min</td></tr><tr><td>A5: YOLO detector</td><td>Annotation instructions, training configuration, detector weights link, mAP results, inference script, and error taxonomy.</td><td>Run detection on images or video, explain IoU or confidence behavior, and show missed and false detections.</td><td>6-7 min</td></tr><tr><td>A6: ResNet transfer learning</td><td>Frozen-feature and full fine-tuning experiments, ablation results, model card, and visual explanations.</td><td>Compare the two strategies, run an example, and interpret a visual explanation and failure case.</td><td>5-6 min</td></tr><tr><td>A7: Vision Transformer</td><td>ViT fine-tuning pipeline and a fair CNN comparison using matched data, metrics, and compute reporting.</td><td>Demonstrate ViT inference and explain where ViT and CNN results differ under the same protocol.</td><td>6-7 min</td></tr><tr><td>A8: VLM zero-shot and retrieval</td><td>Prompt templates, embedding or retrieval pipeline, evaluation set, ranking metrics, and bias or sensitivity checks.</td><td>Show zero-shot recognition or retrieval, compare prompt variants, and explain an incorrect result.</td><td>5-6 min</td></tr><tr><td>A9: VLM reasoning and grounding</td><td>Evaluation harness, prompt set, response logging, scoring rubric, grounding evidence, and failure taxonomy.</td><td>Run representative questions, distinguish grounded from unsupported answers, and explain one hallucination.</td><td>6-7 min</td></tr></tbody></table></div></main>
+      <footer class="page-footer">Page 6</footer>
+    </section><section class="page" id="page-7" aria-label="Syllabus page 7">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><div class="table-wrap"><table class="data-table focus dense"><caption>Assignment-specific repository and video focus, A10 and final project</caption><colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup><thead><tr><th scope="col">Assignment</th><th scope="col">GitHub Repository Focus</th><th scope="col">Demo Video Focus</th><th scope="col">Length</th></tr></thead><tbody><tr><td>A10: Predictive world model</td><td>Temporal data pipeline, encoder and predictor configuration, latent or frame prediction evidence, and baseline comparison.</td><td>Show a short rollout or latent prediction, compare with a baseline, and discuss uncertainty or compounding error.</td><td>6-8 min</td></tr><tr><td>Final project</td><td>Production-quality repository, tagged release, complete documentation, tests, baseline and advanced model, results, and team contributions.</td><td>Present the integrated system, live execution, evaluation, failure analysis, reproducibility path, responsible-use limits, and individual contributions.</td><td>8-10 min</td></tr></tbody></table></div><h3 id="assignment-rubric">Common Assignment Rubric</h3><div class="table-wrap"><table class="data-table rubric"><caption>Common assignment rubric</caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr><th scope="col">Criterion</th><th scope="col">Weight</th></tr></thead><tbody><tr><td>Functional implementation and technical correctness</td><td>30%</td></tr><tr><td>Experimental design, metrics, and failure analysis</td><td>25%</td></tr><tr><td>GitHub organization, version control, reproducibility, and release quality</td><td>20%</td></tr><tr><td>Demo video: clarity, live evidence, results, and limitation analysis</td><td>15%</td></tr><tr><td>Documentation, citations, responsible use, and AI-use disclosure</td><td>10%</td></tr><tr><td>Total</td><td>100%</td></tr></tbody></table></div><p class="submission-gate"><strong>Submission gate. An inaccessible repository or video, missing instructor permission, missing release tag or commit hash, or a video that does not match the submitted code makes the submission incomplete until corrected. Any correction after the deadline is treated under the late-work policy.</strong></p><h2 id="schedule">7. Tentative 15-Week Schedule</h2><div class="table-wrap"><table class="data-table schedule dense"><caption>Tentative schedule, weeks one through seven</caption><colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup><thead><tr><th scope="col">Week</th><th scope="col">Topics</th><th scope="col">Laboratory Focus</th><th scope="col">Assessment / Milestone</th></tr></thead><tbody><tr><td>1</td><td>Course orientation; image formation; pixels, tensors, channels, resolution; Python/OpenCV/PyTorch readiness</td><td>Guided image-tensor laboratory</td><td>A0 assigned and completed</td></tr><tr><td>2</td><td>OpenCV fundamentals: input/output, color spaces, transformations, filtering, thresholding</td><td>Image enhancement and preprocessing lab</td><td>A1 assigned</td></tr><tr><td>3</td><td>Edges, contours, morphology, keypoints, matching, motion, and classical pipelines</td><td>Classical mini-application studio</td><td>A1 due; A2 assigned</td></tr><tr><td>4</td><td>Dataset curation, annotation, leakage, imbalance, augmentation, metrics, privacy, licensing, and bias</td><td>Dataset audit and evaluation lab</td><td>A2 due; project idea pitch</td></tr><tr><td>5</td><td>CNN foundations: convolution, activation, pooling, receptive field, loss functions, backpropagation</td><td>Build a CNN from scratch</td><td>A3 assigned; project proposal</td></tr><tr><td>6</td><td>CNN training, regularization, augmentation, debugging, robustness, and interpretability</td><td>Robustness and explanation lab</td><td>A3 due; A4 due; midterm practical</td></tr><tr><td>7</td><td>Object detection fundamentals; bounding boxes; IoU; precision/recall; non-maximum suppression; YOLO architecture</td><td>Annotation and detector setup lab</td><td>A5 assigned</td></tr></tbody></table></div></main>
+      <footer class="page-footer">Page 7</footer>
+    </section><section class="page" id="page-8" aria-label="Syllabus page 8">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><div class="table-wrap"><table class="data-table schedule dense"><caption>Tentative schedule, weeks eight through fifteen</caption><colgroup><col style="width:25%"><col style="width:25%"><col style="width:25%"><col style="width:25%"></colgroup><thead><tr><th scope="col">Week</th><th scope="col">Topics</th><th scope="col">Laboratory Focus</th><th scope="col">Assessment / Milestone</th></tr></thead><tbody><tr><td>8</td><td>YOLO training, evaluation, error analysis, inference speed, tracking/deployment considerations</td><td>Custom detection challenge</td><td>A5 due; project dataset/model card</td></tr><tr><td>9</td><td>Residual learning, ResNet architectures, transfer learning, fine-tuning, and visual explanation</td><td>ResNet transfer-learning lab</td><td>A6 assigned and due; project baseline</td></tr><tr><td>10</td><td>Vision transformer foundations: patches, embeddings, self-attention, positional information</td><td>ViT fine-tuning lab</td><td>A7 assigned</td></tr><tr><td>11</td><td>CNN–ViT comparison; data efficiency; robustness; compute; attention inspection</td><td>Controlled comparative benchmark</td><td>A7 due; project progress review</td></tr><tr><td>12</td><td>Vision-language models: contrastive learning, shared embedding spaces, zero-shot classification, retrieval</td><td>VLM prompting and retrieval lab</td><td>A8 assigned and due</td></tr><tr><td>13</td><td>VLM captioning, VQA, grounding, hallucination, bias, uncertainty, and evaluation design</td><td>VLM failure-audit studio</td><td>A9 assigned and due</td></tr><tr><td>14</td><td>World models and predictive representation learning: temporal state, latent dynamics, masked prediction, planning concepts</td><td>World-model / JEPA-style predictive lab</td><td>A10 due; final project rehearsal</td></tr><tr><td>15</td><td>System integration, deployment tradeoffs, project demonstrations, oral defenses, and course synthesis</td><td>Final showcase and individual defense</td><td>Final project due</td></tr></tbody></table></div><h2 id="final-project">8. Final Project</h2><p>Students complete an individual or small-team project that applies the full vision-system lifecycle: define a problem, curate data, establish a baseline, select an advanced model, evaluate the system, analyze failures, and communicate a defensible conclusion. Teams may contain two or three students, but every student completes an individual code walk-through and oral defense.</p><h3 id="technical-scope">Required Technical Scope</h3><ul><li>A clearly stated problem, user need, and success criterion.</li><li>A documented dataset or data-collection process, including train/validation/test separation and a dataset card.</li><li>At least one baseline drawn from OpenCV, a small CNN, YOLO, or ResNet.</li><li>At least one advanced component drawn from vision transformers, VLMs, or predictive/world-model methods.</li><li>Evaluation using task-appropriate metrics plus robustness, efficiency, and qualitative failure analysis.</li><li>A discussion of bias, privacy, safety, misuse, licensing, uncertainty, and when human review is required.</li><li>A standalone GitHub repository with a tagged release, environment file, trained-model instructions, recorded demo video, and reproducible execution path.</li></ul><h3 id="project-directions">Suggested Project Directions</h3><ul><li>Small-object detection in aerial, satellite, traffic, or campus imagery.</li><li>Visual inspection for manufacturing, infrastructure, or cyber-physical systems.</li></ul></main>
+      <footer class="page-footer">Page 8</footer>
+    </section><section class="page" id="page-9" aria-label="Syllabus page 9">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><ul class="continuation-list"><li>Medical, biological, environmental, or wearable-sensor image analysis using approved public data.</li><li>Multimodal image-text retrieval or domain-specific visual question answering.</li><li>Robustness and bias evaluation of a VLM on a carefully designed test collection.</li><li>Short-horizon prediction or latent state modeling for motion, navigation, robotics, or changing scenes.</li></ul><div class="table-wrap"><table class="data-table milestones compact"><caption>Final project milestones</caption><colgroup><col style="width:33.333%"><col style="width:33.333%"><col style="width:33.334%"></colgroup><thead><tr><th scope="col">Milestone</th><th scope="col">Due</th><th scope="col">Evidence</th></tr></thead><tbody><tr><td>Problem and team registration</td><td>Week 4</td><td>One-paragraph idea, users, task, candidate data, anticipated risks.</td></tr><tr><td>Proposal</td><td>Week 5</td><td>Two pages: motivation, related methods, data plan, baseline, advanced model, metrics, schedule.</td></tr><tr><td>Dataset and model card</td><td>Week 8</td><td>Data provenance, splits, annotation process, limitations, licensing, intended and excluded uses.</td></tr><tr><td>Baseline demonstration</td><td>Week 9</td><td>Runnable baseline with initial quantitative results and error examples.</td></tr><tr><td>Progress review</td><td>Week 11</td><td>Advanced model status, ablation plan, unresolved technical risks, revised completion plan.</td></tr><tr><td>Rehearsal and peer review</td><td>Week 14</td><td>Near-final demo, preliminary conclusions, peer feedback, revision checklist.</td></tr><tr><td>Final submission</td><td>Week 15</td><td>GitHub repository, tagged release, report, poster/slides, recorded demo video, live demonstration, and individual oral defense.</td></tr></tbody></table></div><h3 id="project-rubric">Final Project Rubric</h3><div class="table-wrap"><table class="data-table rubric"><caption>Final project rubric</caption><colgroup><col style="width:50%"><col style="width:50%"></colgroup><thead><tr><th scope="col">Criterion</th><th scope="col">Project Weight</th></tr></thead><tbody><tr><td>Problem definition and significance</td><td>10%</td></tr><tr><td>Data quality, documentation, and responsible-use analysis</td><td>15%</td></tr><tr><td>Technical implementation and correctness</td><td>20%</td></tr><tr><td>Experimental design, baselines, and ablations</td><td>15%</td></tr><tr><td>Evaluation, robustness, efficiency, and failure analysis</td><td>20%</td></tr><tr><td>Reproducibility and code quality</td><td>10%</td></tr><tr><td>Report, GitHub repository, recorded demonstration, presentation, and oral defense</td><td>10%</td></tr></tbody></table></div><h2 id="midterm">9. Midterm Practical Assessment</h2><p>The midterm is an individual, time-limited practical assessment covering image representation, OpenCV, data preparation, CNN concepts, code tracing, metric interpretation, and debugging. Students may be asked to modify a small pipeline, identify leakage or evaluation errors, interpret results, and explain their reasoning. Generative AI tools are not permitted during this assessment unless explicitly authorized.</p><h2 id="policies">10. Course Policies</h2><h3 id="ai-assisted-work">AI-Assisted Work</h3><p>Students may use generative AI and code-assistance tools for most learning activities and assignments, provided the use is disclosed and the student remains responsible for every submitted claim, line of code, result, and citation. Submitting unverified AI output, fabricated experiments, invented references, or code the student cannot explain is not acceptable.</p></main>
+      <footer class="page-footer">Page 9</footer>
+    </section><section class="page" id="page-10" aria-label="Syllabus page 10">
+      <header class="running-head">COMPUTER VISION: FROM OPENCV TO WORLD MODELS</header>
+      <main class="page-content"><p class="continuation-paragraph">Short oral checks, live code modifications, and individual assessments will be used to verify mastery. Restrictions for quizzes, the midterm, or other individual assessments will be stated in advance.</p><h3 id="academic-integrity">Academic Integrity and Reproducibility</h3><p>Students may discuss concepts and debugging strategies, but submitted work must clearly identify individual and team contributions. Reused code, datasets, pretrained models, figures, and text must be credited. Results must be reproducible from the submitted materials. Fabricated data, altered logs, hidden test-set tuning, and unreported copying are violations of academic integrity.</p><h3 id="late-work">Late Work</h3><p>Assignments submitted within 24 hours after the deadline may receive up to a 10% deduction; work submitted between 24 and 72 hours late may receive up to a 25% deduction. Work more than 72 hours late may be accepted only when required for course continuity or supported by an approved accommodation or documented emergency. Project milestones should be submitted on time because they support feedback and team coordination.</p><h3 id="attendance">Attendance and Laboratory Participation</h3><p>Because the course is laboratory-centered, students are expected to attend synchronous sessions, participate in demonstrations and peer reviews, and maintain regular progress. Hybrid participation must follow the mode announced for that week. Missing a class does not remove responsibility for code, data, or milestone requirements posted in the LMS.</p><h3 id="responsible-use">Data, Safety, and Responsible Use</h3><p>Students must use datasets and systems consistent with university policy, applicable licenses, privacy requirements, and instructor approval. Projects involving identifiable people, sensitive records, surveillance, high-risk decision-making, or unsafe physical deployment require explicit approval and appropriate safeguards. Course work must not be used to make consequential decisions about real individuals.</p><h3 id="accessibility">Accessibility and Student Support</h3><p>Students needing academic accommodations should use the university’s established process and communicate approved needs as early as possible. Course materials will be provided in accessible formats when feasible. Students experiencing technical, academic, or personal barriers should contact the instructor and relevant university support services promptly.</p></main>
+      <footer class="page-footer">Page 10</footer>
+    </section></div>
+</body>
+</html>
